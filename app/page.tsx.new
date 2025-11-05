@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import InquiryForm from '@/components/InquiryForm';
 
 // Dynamically import the Carousel component with SSR disabled
 const Carousel = dynamic(
@@ -74,50 +73,9 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                We're not just another holiday company - we're your personal gateway to extraordinary experiences. What makes us different? We don't just book your stay, we craft unforgettable moments with personalized attention that larger chains simply can't match.
+                A spectacular gateway to unforgettable vacations. Get ready to experience premium holiday packages, luxurious 5-star accommodations, and exclusive time-sharing memberships.
               </motion.p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different Section */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
-              What Makes Us Different
-            </h2>
-            <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-700 leading-relaxed" style={{ fontWeight: 300 }}>
-              Just as the Taj Mahal stands unique in its beauty and craftsmanship, we stand apart in our commitment to exceptional service. But we're not just different - we're better in ways that matter to you.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: '✨',
-                title: 'Personalized Experiences',
-                description: 'Tailored holiday packages designed around your unique preferences and desires.'
-              },
-              {
-                icon: '🤝',
-                title: 'Direct Owner Relationships',
-                description: 'We work directly with property owners to bring you the best deals and authentic experiences.'
-              },
-              {
-                icon: '💎',
-                title: 'Premium Quality',
-                description: 'Handpicked properties that meet our high standards for quality and comfort.'
-              }
-            ].map((feature, index) => (
-              <div key={index} className="bg-gray-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-medium text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -169,104 +127,32 @@ export default function Home() {
               {
                 title: '1. Register',
                 description: 'Complete our simple registration form to get started',
-                image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1000&auto=format&fit=crop',
+                image: 'https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=1000&auto=format&fit=crop',
               },
               {
                 title: '2. Receive Best Offer',
                 description: 'Get the best value for your timeshare from our network of buyers',
-                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop',
+                image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1000&auto=format&fit=crop',
               },
               {
                 title: '3. Get Paid',
                 description: 'Receive your payment quickly and securely',
-                image: 'https://images.unsplash.com/photo-1604594849809-dfeddd911859?q=80&w=1000&auto=format&fit=crop',
+                image: 'https://images.unsplash.com/photo-1604594849809-dfed84882784?q=80&w=1000&auto=format&fit=crop',
               }
             ].map((step, index) => (
-              <motion.div 
-                key={index} 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-teal-100 shadow-lg">
+              <div key={index} className="text-center">
+                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-teal-100">
                   <Image
                     src={step.image}
                     alt={step.title}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Circular Section */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="relative w-full max-w-4xl h-96 mx-auto mb-16">
-            {/* Main Container */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* Center Circle */}
-              <div className="relative z-10 w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex flex-col items-center justify-center text-white shadow-lg">
-                <span className="text-4xl font-bold">3</span>
-                <span className="text-sm">Simple Steps</span>
-              </div>
-
-              {/* Step 1 - Top */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 -translate-y-0 text-center w-40">
-                <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                  </svg>
-                </div>
-                <p className="text-sm text-gray-700 font-medium">Register</p>
-              </div>
-              
-              {/* Step 2 - Bottom Left */}
-              <div className="absolute bottom-0 left-0 text-center w-40">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                  </svg>
-                </div>
-                <p className="text-sm text-gray-700 font-medium">Receive Best Offer</p>
-              </div>
-              
-              {/* Step 3 - Bottom Right */}
-              <div className="absolute bottom-0 right-0 text-center w-40">
-                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <p className="text-sm text-gray-700 font-medium">Get Paid</p>
-              </div>
-              
-              {/* Connecting Lines */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Line from top to center */}
-                <line x1="150" y1="60" x2="150" y2="120" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round"/>
-                {/* Line from bottom-left to center */}
-                <line x1="90" y1="220" x2="130" y2="170" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round"/>
-                {/* Line from bottom-right to center */}
-                <line x1="210" y1="220" x2="170" y2="170" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link 
-              href="/contact" 
-              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-full shadow-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 text-sm"
-            >
-              Contact Us Today
-            </Link>
           </div>
         </div>
       </section>
@@ -379,53 +265,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Inquiry Form Section */}
-      <section id="inquiry" className="py-16 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
-              Get in Touch
-            </h2>
-            <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-700 leading-relaxed" style={{ fontWeight: 300 }}>
-              Have questions about our timeshare offerings? Fill out the form below and our specialist will get back to you shortly.
-            </p>
-          </div>
-          
-          <InquiryForm />
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="aspect-video relative rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1000&auto=format&fit=crop"
-                  alt="Plan your trip to paradise"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              
-              <div>
-                <p className="text-sm uppercase tracking-wider text-teal-600 mb-4">Start Your Journey</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight" style={{fontFamily: 'Georgia, serif'}}>
-                  Plan your trip to paradise
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-8" style={{fontWeight: 300}}>
-                  Contact us today to explore our exclusive packages and time-sharing memberships. Let us help you create unforgettable memories that will last a lifetime.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-block bg-teal-700 text-white px-8 py-3 rounded-md text-base font-medium hover:bg-teal-800 transition-colors"
-                >
-                  Get in Touch
-                </Link>
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight" style={{fontFamily: 'Georgia, serif'}}>
+              Ready to plan your dream vacation?
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-8" style={{fontWeight: 300}}>
+              Contact us today to explore our exclusive packages and time-sharing memberships. Let us help you create unforgettable memories that will last a lifetime.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-teal-700 text-white px-8 py-3 rounded-md text-base font-medium hover:bg-teal-800 transition-colors"
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
       </section>

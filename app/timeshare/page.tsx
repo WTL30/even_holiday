@@ -175,7 +175,7 @@ export default function TimeSharePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gradient-to-br from-white via-purple-50 to-pink-50">
+      {/* <section className="py-16 bg-gradient-to-br from-white via-purple-50 to-pink-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
             Membership Benefits
@@ -195,7 +195,7 @@ export default function TimeSharePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Membership Plans */}
       <section className="py-16 bg-white">
